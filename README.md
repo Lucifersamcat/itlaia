@@ -25,3 +25,13 @@ npx serve .
 ## Publicación
 
 El flujo `.github/workflows/deploy-pages.yml` publica automáticamente el sitio en GitHub Pages cuando se envían cambios a la rama `main`. En la configuración del repositorio, GitHub Pages debe usar **GitHub Actions** como fuente de publicación.
+
+## Estructura
+
+- `index.html`: estructura de las vistas del sitio.
+- `styles.css`: diseño y adaptación responsiva.
+- `app.js`: navegación, estado e interacción de la interfaz.
+- `js/data/terms.js`: contenido del glosario.
+- `js/data/faqs.js`: preguntas frecuentes.
+- `js/data/companies.js`: empresas, aplicaciones y modelos.
+- `js/data/comparison.js`: productos, criterios y escenarios del comparador.
