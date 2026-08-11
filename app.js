@@ -356,7 +356,7 @@ const normalize=value=>value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toL
 const escapeHtml=value=>String(value).replace(/[&<>"]/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[char]));
 
 function parseRoute(){const raw=location.hash.slice(1)||"inicio";const [view,slug]=raw.split("/");return{view,slug};}
-function setActiveView(view){const allowed=["inicio","glosario","termino","empresas","empresa","comparador","faqs"];state.activeView=allowed.includes(view)?view:"inicio";document.querySelectorAll("[data-view]").forEach(section=>section.classList.toggle("is-active",section.dataset.view===state.activeView));const navView=view==="termino"?"glosario":view==="empresa"?"empresas":view;document.querySelectorAll("[data-route]").forEach(link=>link.classList.toggle("is-current",link.dataset.route===navView));document.querySelector(".main-nav").classList.remove("is-open");document.querySelector(".menu-toggle").setAttribute("aria-expanded","false");}
+function setActiveView(view){const allowed=["inicio","glosario","termino","empresas","empresa","comparador","aprendizaje","faqs"];state.activeView=allowed.includes(view)?view:"inicio";document.querySelectorAll("[data-view]").forEach(section=>section.classList.toggle("is-active",section.dataset.view===state.activeView));const navView=view==="termino"?"glosario":view==="empresa"?"empresas":view;document.querySelectorAll("[data-route]").forEach(link=>link.classList.toggle("is-current",link.dataset.route===navView));document.querySelector(".main-nav").classList.remove("is-open");document.querySelector(".menu-toggle").setAttribute("aria-expanded","false");}
 function handleRoute(scroll=true){const{view,slug}=parseRoute();if(view==="termino"){renderTermDetail(slug);}else if(view==="empresa"){renderCompanyDetail(slug);}else{setActiveView(view);}if(scroll)window.scrollTo({top:0,behavior:"smooth"});}
 function go(hash){history.pushState(null,"",`#${hash}`);handleRoute();}
 function searchTerm(query){state.termQuery=query.trim();state.termLetter="Todas";document.querySelector("#term-filter").value=state.termQuery;renderAlphabet();renderTerms();go("glosario");}
@@ -474,6 +474,7 @@ document.querySelector(".theme-toggle").addEventListener("click",()=>{const dark
 document.querySelector("#compare-scenario").addEventListener("change",event=>{state.compareScenario=event.target.value;renderCompareControls();renderComparison();});
 document.querySelector("#evidence-dialog .dialog-close").addEventListener("click",()=>document.querySelector("#evidence-dialog").close());
 document.querySelector("#evidence-dialog").addEventListener("click",event=>{if(event.target===event.currentTarget)event.currentTarget.close();});
+document.querySelectorAll(".copy-command").forEach(button=>button.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(button.dataset.command);button.textContent="Copiado";setTimeout(()=>button.textContent="Copiar",1600);}catch{button.textContent="Copia manualmente";}}));
 window.addEventListener("hashchange",()=>handleRoute());
 const savedTheme=localStorage.getItem("atlas-theme");if(savedTheme)document.documentElement.dataset.theme=savedTheme;
 renderAlphabet();renderTerms();renderCompanyFilters();renderCompanies();renderFaqFilters();renderFaqs();renderCompareControls();renderAgentPicker();renderComparison();handleRoute(false);

@@ -23,6 +23,7 @@
       <a href="#glosario" data-route="glosario">Glosario</a>
       <a href="#empresas" data-route="empresas">Empresas y modelos</a>
       <a href="#comparador" data-route="comparador">Comparador</a>
+      <a href="#aprendizaje" data-route="aprendizaje">Aprendizaje</a>
       <a href="#faqs" data-route="faqs">FAQs</a>
       <button class="theme-toggle" type="button" aria-label="Cambiar tema"><span aria-hidden="true">◐</span></button>
     </nav>
@@ -119,6 +120,51 @@
       <p class="data-note">Los precios pueden corresponder a suscripciones, tokens, imágenes, audio, créditos o infraestructura según la categoría. Pueden variar por país, región, impuestos o promociones. Pulsa cualquier valor para consultar su condición, fuente y fecha de verificación.</p>
     </section>
 
+    <section class="view shell inner-page" data-view="aprendizaje">
+      <div class="page-heading page-heading-wide learning-heading">
+        <div><p class="eyebrow">Aprende haciendo</p><h1>Aprendizaje</h1></div>
+        <p>Guías cortas para trabajar con herramientas digitales con seguridad y entender qué sucede en cada paso.</p>
+      </div>
+
+      <section class="learning-hero" aria-labelledby="github-title">
+        <div>
+          <p class="eyebrow">GitHub · consola</p>
+          <h2 id="github-title">Tu primer flujo<br><em>con Git</em></h2>
+          <p>Git registra cambios en tu proyecto; GitHub guarda una copia remota para compartir y colaborar. Estos comandos cubren el ciclo básico: descargar, modificar, guardar y publicar.</p>
+        </div>
+        <aside class="learning-note"><strong>Antes de empezar</strong><p>Instala Git, abre PowerShell o Terminal y asegúrate de tener acceso a tu cuenta de GitHub. No pegues contraseñas ni tokens en la consola.</p></aside>
+      </section>
+
+      <section class="learning-section" aria-labelledby="setup-title">
+        <div class="learning-section-heading"><span>01</span><div><h2 id="setup-title">Configura tu identidad</h2><p>Solo se realiza una vez en cada equipo. El correo debe coincidir con uno verificado en GitHub.</p></div></div>
+        <div class="command-card"><div><span class="command-label">Terminal</span><code>git config --global user.name "Tu Nombre"<br>git config --global user.email "tu-correo@ejemplo.com"</code></div><button type="button" class="copy-command" data-command="git config --global user.name &quot;Tu Nombre&quot;\ngit config --global user.email &quot;tu-correo@ejemplo.com&quot;">Copiar</button></div>
+      </section>
+
+      <section class="learning-section" aria-labelledby="clone-title">
+        <div class="learning-section-heading"><span>02</span><div><h2 id="clone-title">Descarga un repositorio</h2><p>En GitHub, abre el repositorio, pulsa <strong>Code</strong> y copia su dirección HTTPS. Luego ejecuta:</p></div></div>
+        <div class="command-card"><div><span class="command-label">Terminal</span><code>git clone https://github.com/usuario/nombre-del-repo.git<br>cd nombre-del-repo</code></div><button type="button" class="copy-command" data-command="git clone https://github.com/usuario/nombre-del-repo.git\ncd nombre-del-repo">Copiar</button></div>
+      </section>
+
+      <section class="learning-section" aria-labelledby="save-title">
+        <div class="learning-section-heading"><span>03</span><div><h2 id="save-title">Guarda tus cambios</h2><p>Después de editar archivos, revisa qué cambió, prepara esos cambios y crea un punto de guardado con un mensaje claro.</p></div></div>
+        <div class="command-stack">
+          <div class="command-card"><div><span class="command-label">Revisar</span><code>git status</code><p>Te muestra archivos nuevos, modificados o listos para guardar.</p></div><button type="button" class="copy-command" data-command="git status">Copiar</button></div>
+          <div class="command-card"><div><span class="command-label">Preparar</span><code>git add .</code><p>Incluye todos los cambios del proyecto. Para un archivo: <code>git add archivo.html</code>.</p></div><button type="button" class="copy-command" data-command="git add .">Copiar</button></div>
+          <div class="command-card"><div><span class="command-label">Guardar</span><code>git commit -m "Describe el cambio"</code><p>Escribe mensajes breves y concretos, por ejemplo: <em>"Agrega sección de aprendizaje"</em>.</p></div><button type="button" class="copy-command" data-command="git commit -m &quot;Describe el cambio&quot;">Copiar</button></div>
+        </div>
+      </section>
+
+      <section class="learning-section" aria-labelledby="publish-title">
+        <div class="learning-section-heading"><span>04</span><div><h2 id="publish-title">Publica y actualiza</h2><p>Envía tu commit a GitHub. Antes de comenzar a trabajar otro día, descarga los cambios remotos.</p></div></div>
+        <div class="command-grid">
+          <div class="command-card"><div><span class="command-label">Subir a GitHub</span><code>git push origin main</code><p>Puede pedirte autenticarte en GitHub la primera vez.</p></div><button type="button" class="copy-command" data-command="git push origin main">Copiar</button></div>
+          <div class="command-card"><div><span class="command-label">Traer cambios</span><code>git pull origin main</code><p>Hazlo antes de editar si alguien más trabaja en el mismo proyecto.</p></div><button type="button" class="copy-command" data-command="git pull origin main">Copiar</button></div>
+        </div>
+      </section>
+
+      <aside class="learning-warning"><strong>Un hábito útil</strong><p>Usa <code>git status</code> antes de <code>git add .</code>. Así evitas subir archivos que no pertenecen al proyecto, como claves, contraseñas o configuraciones privadas.</p></aside>
+    </section>
+
     <section class="view shell inner-page" data-view="faqs">
       <div class="page-heading page-heading-wide faq-heading">
         <div><p class="eyebrow">Taller ITLA · Manejo de IA</p><h1>Preguntas<br><em>frecuentes</em></h1></div>
@@ -153,7 +199,7 @@
   <footer class="site-footer">
     <div class="shell footer-grid">
       <div><a class="brand" href="#inicio" data-route="inicio"><span class="brand-mark" aria-hidden="true">A</span><span>Atlas IA</span></a><p>Aprende conceptos, conoce los modelos y compara con criterio.</p></div>
-      <div><strong>Explorar</strong><a href="#glosario" data-route="glosario">Glosario</a><a href="#empresas" data-route="empresas">Empresas y modelos</a><a href="#comparador" data-route="comparador">Comparador</a><a href="#faqs" data-route="faqs">Preguntas frecuentes</a></div>
+      <div><strong>Explorar</strong><a href="#glosario" data-route="glosario">Glosario</a><a href="#empresas" data-route="empresas">Empresas y modelos</a><a href="#comparador" data-route="comparador">Comparador</a><a href="#aprendizaje" data-route="aprendizaje">Aprendizaje</a><a href="#faqs" data-route="faqs">Preguntas frecuentes</a></div>
       <div><strong>Metodología</strong><span>Fuentes oficiales</span><span>Fechas de revisión</span><span>Sin rankings absolutos</span></div>
     </div>
     <div class="shell footer-bottom"><span>© 2026 Atlas IA</span><span>Proyecto educativo · Manejo de IA</span></div>
