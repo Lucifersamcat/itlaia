@@ -1,49 +1,27 @@
 # Atlas IA
 
-Prototipo estático y responsivo de una enciclopedia educativa de inteligencia artificial.
+Atlas IA es un sitio educativo creado para ayudar a estudiantes y personas curiosas a comprender la inteligencia artificial con un lenguaje claro y práctico.
 
-## Abrir el sitio
+Su objetivo es hacer que los conceptos de IA sean más accesibles, ofreciendo explicaciones sencillas sobre términos importantes, empresas, modelos y herramientas actuales.
 
-Se puede abrir `index.html` directamente en un navegador. Para probarlo mediante un servidor local:
+## Qué encontrarás
+
+- Un glosario de conceptos esenciales de inteligencia artificial.
+- Información para distinguir empresas, aplicaciones y modelos.
+- Un comparador para explorar distintas soluciones según una necesidad concreta.
+- Preguntas frecuentes orientadas al uso responsable de la IA.
+- Una sección de aprendizaje con una guía básica para usar Git y GitHub desde la consola.
+
+Atlas IA busca promover un uso informado, crítico y responsable de la tecnología. La información se presenta con fines educativos y puede simplificar algunos temas para facilitar el aprendizaje.
+
+## Ejecutar localmente
+
+El sitio es estático y puede abrirse directamente desde `index.html`. Para probarlo con un servidor local:
 
 ```powershell
 npx serve .
 ```
 
-## Publicar en GitHub Pages
+## Publicación
 
-El proyecto incluye el flujo `.github/workflows/deploy-pages.yml`. Cada cambio
-enviado a la rama `main` se publica automáticamente.
-
-1. Crear un repositorio vacío en GitHub.
-2. En **Settings > Pages > Build and deployment**, seleccionar **GitHub Actions**.
-3. En esta carpeta, ejecutar:
-
-```powershell
-git init
-git add .
-git commit -m "Publicar Atlas IA en GitHub Pages"
-git branch -M main
-git remote add origin https://github.com/USUARIO/REPOSITORIO.git
-git push -u origin main
-```
-
-La dirección pública será `https://USUARIO.github.io/REPOSITORIO/`.
-
-## Secciones
-
-- Buscador principal y conceptos destacados.
-- Glosario ampliado con búsqueda, índice alfabético y fichas enlazables.
-- Glosario actualizado con conceptos de hardware, licencias, seguridad, despliegue, modelos abiertos e IA física.
-- Fichas dedicadas con explicación, ejemplo, funcionamiento, riesgos y conceptos relacionados.
-- Catálogo de 27 empresas, aplicaciones y familias de modelos con perfiles detallados.
-- Cobertura de modelos generales, empresariales, abiertos, imagen, video, audio, música, 3D y robótica.
-- Modelos concretos con modalidad, orientación, contexto y precios de API cuando existe una tarifa oficial.
-- Comparador de hasta cuatro productos con categorías separadas para asistentes generales y agentes de programación.
-- Categorías adicionales para modelos por API, imagen, video, voz y audio, modelos abiertos, plataformas empresariales e IA física.
-- Escenarios que reordenan los criterios: investigación, documentos, oficina, privacidad, repositorios, pull requests, terminal y equipos.
-- Vistas de resumen, comparación completa y solo diferencias.
-- Evidencia por celda con condición, plan, fuente oficial y fecha de verificación.
-- Sección de preguntas frecuentes para el Taller ITLA Manejo de IA, con búsqueda, filtros temáticos y enlaces al glosario.
-
-Los datos actuales son demostrativos. Los precios, capacidades y disponibilidad deberán conectarse posteriormente con perfiles revisados y fuentes oficiales.
+El flujo `.github/workflows/deploy-pages.yml` publica automáticamente el sitio en GitHub Pages cuando se envían cambios a la rama `main`. En la configuración del repositorio, GitHub Pages debe usar **GitHub Actions** como fuente de publicación.
